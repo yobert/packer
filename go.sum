@@ -41,8 +41,6 @@ github.com/PuerkitoBio/goquery v1.5.0 h1:uGvmFXOA73IKluu/F84Xd1tt/z07GYm8X49XKHP
 github.com/PuerkitoBio/goquery v1.5.0/go.mod h1:qD2PgZ9lccMbQlc7eEOjaeRlFQON7xY8kdmcsrnKqMg=
 github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d h1:G0m3OIz70MZUWq3EgK3CesDbo8upS2Vm9/P3FtgI+Jk=
 github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d/go.mod h1:3eOhrUMpNV+6aFIbp5/iudMxNCF27Vw2OZgy4xEx0Fg=
-github.com/Telmate/proxmox-api-go v0.0.0-20200116224409-320525bf3340 h1:bOjy6c07dpipWm11dL92FbtmXGnDywOm2uKzG4CePuY=
-github.com/Telmate/proxmox-api-go v0.0.0-20200116224409-320525bf3340/go.mod h1:OGWyIMJ87/k/GCz8CGiWB2HOXsOVDM6Lpe/nFPkC4IQ=
 github.com/Telmate/proxmox-api-go v0.0.0-20200225212220-a29566462efd h1:Moss3RtB00h4omKW+leNGIGIfmHcnkZPTJ5d0A0fY14=
 github.com/Telmate/proxmox-api-go v0.0.0-20200225212220-a29566462efd/go.mod h1:OGWyIMJ87/k/GCz8CGiWB2HOXsOVDM6Lpe/nFPkC4IQ=
 github.com/abdullin/seq v0.0.0-20160510034733-d5467c17e7af h1:DBNMBMuMiWYu0b+8KMJuWmfCkcxl09JwdlqwDZZ6U14=
@@ -87,8 +85,6 @@ github.com/aws/aws-sdk-go v1.24.1 h1:B2NRyTV1/+h+Dg8Bh7vnuvW6QZz/NBL+uzgC2uILDMI
 github.com/aws/aws-sdk-go v1.24.1/go.mod h1:KmX6BPdI08NWTb3/sm4ZGu5ShLoqVDhKgpiN924inxo=
 github.com/azr/flock v0.0.0-20190823144736-958d66434653 h1:2H3Cu0cbG8iszfcgnANwC/cm0YkPJIQvaJ9/tSpwh9o=
 github.com/azr/flock v0.0.0-20190823144736-958d66434653/go.mod h1:EI7lzWWilX2K3ZMZ7Ta+E4DZtWzMC2tbn3cM3oVPuAU=
-github.com/azr/go-cty v1.1.1-0.20200203143058-28fcda2fe0cc h1:CPIyQPU8jk51LOCR3XUI6hiJHtRqw7fg0kLwCgZPQvs=
-github.com/azr/go-cty v1.1.1-0.20200203143058-28fcda2fe0cc/go.mod h1:YO23e2L18AG+ZYQfSobnY4G65nvwvprPCxBHkufUH1k=
 github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d h1:xDfNPAt8lFiC1UJrqV3uuy861HCTo708pDMbjHHdCas=
 github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d/go.mod h1:6QX/PXZ00z/TKoufEY6K/a0k6AhaJrQKdFe6OfVXsa4=
 github.com/bgentry/speakeasy v0.1.0 h1:ByYyxL9InA1OWqxJqqp2A5pYHUrCiAL6K3J+LKSsQkY=
@@ -243,8 +239,6 @@ github.com/hashicorp/go-cty-funcs/uuid v0.0.0-20200203151509-c92509f48b18 h1:CxY
 github.com/hashicorp/go-cty-funcs/uuid v0.0.0-20200203151509-c92509f48b18/go.mod h1:QFbv9KeSic7KIgfOYbUW02G4LxOf3Fh9Ylm4n174LUQ=
 github.com/hashicorp/go-getter v1.3.1-0.20190906090232-a0f878cb75da h1:HAasZmyRrb7/paYuww5RfVwY3wkFpsbMNYwBxOSZquY=
 github.com/hashicorp/go-getter v1.3.1-0.20190906090232-a0f878cb75da/go.mod h1:7qxyCd8rBfcShwsvxgIguu4KbS3l8bUCwg2Umn7RjeY=
-github.com/hashicorp/go-getter/v2 v2.0.0-20200206160058-e2a28063d6e7 h1:ODZKizgWGz4diUEZwCgf8qgIn/D+qVW/JOdVVV/z7k8=
-github.com/hashicorp/go-getter/v2 v2.0.0-20200206160058-e2a28063d6e7/go.mod h1:jlmxRRjTpY0KdWrV1Uq38GUVskrjIZUrjOAybo0OArw=
 github.com/hashicorp/go-getter/v2 v2.0.0-20200318090939-0b1d527d9793 h1:jH222Ag2I+p5tq5IagFwCfj5CnRzqcGW8RgcQ8jEPMs=
 github.com/hashicorp/go-getter/v2 v2.0.0-20200318090939-0b1d527d9793/go.mod h1:jlmxRRjTpY0KdWrV1Uq38GUVskrjIZUrjOAybo0OArw=
 github.com/hashicorp/go-immutable-radix v1.0.0 h1:AKDB1HM5PWEA7i4nhcpwOrO2byshxBjXVn/J/3+z5/0=
@@ -269,7 +263,6 @@ github.com/hashicorp/go-uuid v1.0.1 h1:fv1ep09latC32wFoVwnqcnKJGnMSdBanPczbHAYm1
 github.com/hashicorp/go-uuid v1.0.1/go.mod h1:6SBZvOh/SIDV7/2o3Jml5SYk/TvGqwFJ/bN7x4byOro=
 github.com/hashicorp/go-uuid v1.0.2 h1:cfejS+Tpcp13yd5nYHWDI6qVCny6wyX2Mt5SGur2IGE=
 github.com/hashicorp/go-uuid v1.0.2/go.mod h1:6SBZvOh/SIDV7/2o3Jml5SYk/TvGqwFJ/bN7x4byOro=
-github.com/hashicorp/go-version v1.0.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
 github.com/hashicorp/go-version v1.1.0 h1:bPIoEKD27tNdebFGGxxYwcL4nepeY4j1QP23PFRGzg0=
 github.com/hashicorp/go-version v1.1.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
 github.com/hashicorp/go-version v1.2.0 h1:3vNe/fWF5CBgRIguda1meWhsZHy3m8gCJ5wx+dIzX/E=
@@ -377,8 +370,6 @@ github.com/mitchellh/go-vnc v0.0.0-20150629162542-723ed9867aed/go.mod h1:3rdaFaC
 github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7 h1:DpOJ2HYzCv8LZP15IdmG+YdwD2luVPHITV96TkirNBM=
 github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7/go.mod h1:ZXFpozHsX6DPmq2I0TCekCxypsnAUbP2oI0UX1GXzOo=
 github.com/mitchellh/gox v0.4.0/go.mod h1:Sd9lOJ0+aimLBi73mGofS1ycjY8lL3uZM3JPS42BGNg=
-github.com/mitchellh/gox v1.0.1 h1:x0jD3dcHk9a9xPSDN6YEL4xL6Qz0dvNYm8yZqui5chI=
-github.com/mitchellh/gox v1.0.1/go.mod h1:ED6BioOGXMswlXa2zxfh/xdd5QhwYliBFn9V18Ap4z4=
 github.com/mitchellh/iochan v1.0.0 h1:C+X3KsSTLFVBr/tK1eYN/vs4rJcvsiLU338UhYPJWeY=
 github.com/mitchellh/iochan v1.0.0/go.mod h1:JwYml1nuB7xOzsp52dPpHFffvOCDupsG0QubkSMEySY=
 github.com/mitchellh/mapstructure v0.0.0-20160808181253-ca63d7c062ee/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=
@@ -469,8 +460,6 @@ github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJy
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/temoto/robotstxt v1.1.1 h1:Gh8RCs8ouX3hRSxxK7B1mO5RFByQ4CmJZDwgom++JaA=
 github.com/temoto/robotstxt v1.1.1/go.mod h1:+1AmkuG3IYkh1kv0d2qEB9Le88ehNO0zwOr3ujewlOo=
-github.com/tencentcloud/tencentcloud-sdk-go v3.0.97+incompatible h1:y2gZtLpcWqFzSFbQSKwv1gL+NocPRM0ktGh7Dlb8U7s=
-github.com/tencentcloud/tencentcloud-sdk-go v3.0.97+incompatible/go.mod h1:0PfYow01SHPMhKY31xa+EFz2RStxIqj6JFAJS+IkCi4=
 github.com/tencentcloud/tencentcloud-sdk-go v3.0.121+incompatible h1:/5EEPgCRsWdGgZsM7YRLhYE9gpE9+kUGoIfGCrFYU0s=
 github.com/tencentcloud/tencentcloud-sdk-go v3.0.121+incompatible/go.mod h1:0PfYow01SHPMhKY31xa+EFz2RStxIqj6JFAJS+IkCi4=
 github.com/ucloud/ucloud-sdk-go v0.12.0 h1:VCFN3jWg/G4wvwjG6qG5AhFuAT1JdmGvY6+4WHbuJcw=
