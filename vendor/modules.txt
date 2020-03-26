@@ -321,6 +321,7 @@ github.com/hashicorp/go-cty-funcs/uuid
 # github.com/hashicorp/go-getter v1.4.1
 github.com/hashicorp/go-getter/helper/url
 # github.com/hashicorp/go-getter/v2 v2.0.0-20200511085045-ad575698c524
+# github.com/hashicorp/go-getter/v2 v2.0.0-20200326134438-527b5c1ca52d
 github.com/hashicorp/go-getter/v2
 github.com/hashicorp/go-getter/v2/helper/url
 # github.com/hashicorp/go-hclog v0.12.0
