@@ -277,4 +277,3 @@ func handleAbortsAndInterupts(state multistep.StateBag, ui packer.Ui, stepName s
 	}
 	return true
 }
-
