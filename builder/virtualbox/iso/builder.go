@@ -28,6 +28,7 @@ type Builder struct {
 }
 
 type Config struct {
+	multistep.MultiStepConfig       `mapstructure:",squash"`
 	common.PackerConfig             `mapstructure:",squash"`
 	common.HTTPConfig               `mapstructure:",squash"`
 	common.ISOConfig                `mapstructure:",squash"`
@@ -410,6 +411,7 @@ func (b *Builder) Run(ctx context.Context, ui packer.Ui, hook packer.Hook) (pack
 	state.Put("driver", driver)
 	state.Put("hook", hook)
 	state.Put("ui", ui)
+	state.Put("steps_max_retry", b.config.MaxRetry)
 
 	// Run
 	b.runner = common.NewRunnerWithPauseFn(steps, b.config.PackerConfig, ui, state)

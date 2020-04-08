@@ -95,7 +95,7 @@ func (s *StepDownload) Run(ctx context.Context, state multistep.StateBag) multis
 	err := fmt.Errorf("error downloading %s: %v", s.Description, errs)
 	state.Put("error", err)
 	ui.Error(err.Error())
-	return multistep.ActionHalt
+	return multistep.ActionRetry
 }
 
 func (s *StepDownload) download(ctx context.Context, ui packer.Ui, source string) (string, error) {

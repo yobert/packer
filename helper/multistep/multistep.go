@@ -2,7 +2,10 @@
 // discrete steps.
 package multistep
 
-import "context"
+import (
+	"context"
+	"github.com/hashicorp/packer/template/interpolate"
+)
 
 // A StepAction determines the next step to take regarding multi-step actions.
 type StepAction uint
@@ -10,6 +13,7 @@ type StepAction uint
 const (
 	ActionContinue StepAction = iota
 	ActionHalt
+	ActionRetry
 )
 
 // This is the key set in the state bag when using the basic runner to
@@ -45,4 +49,12 @@ type Step interface {
 type Runner interface {
 	// Run runs the steps with the given initial state.
 	Run(context.Context, StateBag)
+}
+
+type MultiStepConfig struct {
+	MaxRetry int `mapstructure:"steps_max_retry"`
+}
+
+func (c *MultiStepConfig) Prepare(ctx *interpolate.Context) []error {
+	return nil
 }

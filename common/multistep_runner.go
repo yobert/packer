@@ -15,6 +15,9 @@ import (
 func newRunner(steps []multistep.Step, config PackerConfig, ui packer.Ui) (multistep.Runner, multistep.DebugPauseFn) {
 	switch config.PackerOnError {
 	case "", "cleanup":
+		for i, step := range steps {
+			steps[i] = basicStep{step, ui}
+		}
 	case "abort":
 		for i, step := range steps {
 			steps[i] = abortStep{step, ui}
@@ -56,6 +59,44 @@ func typeName(i interface{}) string {
 	return reflect.Indirect(reflect.ValueOf(i)).Type().Name()
 }
 
+type basicStep struct {
+	step multistep.Step
+	ui   packer.Ui
+}
+
+func (s basicStep) InnerStepName() string {
+	return typeName(s.step)
+}
+
+func (s basicStep) Run(ctx context.Context, state multistep.StateBag) multistep.StepAction {
+	action := s.step.Run(ctx, state)
+	if action == multistep.ActionContinue {
+		return action
+	}
+
+	// Retry step if steps_max_retry > 1 and if action is ActionRetry
+	ui := state.Get("ui").(packer.Ui)
+	maxRetries := 0
+	if times, ok := state.GetOk("steps_max_retry"); ok {
+		maxRetries = times.(int)
+	}
+	retries := 0
+	for action == multistep.ActionRetry && retries < maxRetries {
+		ui.Say(fmt.Sprintf("Retrying step: %s", typeName(s.step)))
+		action = s.step.Run(ctx, state)
+		if action == multistep.ActionContinue {
+			return action
+		}
+		retries++
+	}
+
+	return multistep.ActionHalt
+}
+
+func (s basicStep) Cleanup(state multistep.StateBag) {
+	s.step.Cleanup(state)
+}
+
 type abortStep struct {
 	step multistep.Step
 	ui   packer.Ui
@@ -66,7 +107,28 @@ func (s abortStep) InnerStepName() string {
 }
 
 func (s abortStep) Run(ctx context.Context, state multistep.StateBag) multistep.StepAction {
-	return s.step.Run(ctx, state)
+	action := s.step.Run(ctx, state)
+	if action == multistep.ActionContinue {
+		return action
+	}
+
+	// Retry step if steps_max_retry > 1 and if action is ActionRetry
+	maxRetries := 0
+	if times, ok := state.GetOk("steps_max_retry"); ok {
+		maxRetries = times.(int)
+	}
+	ui := state.Get("ui").(packer.Ui)
+	retries := 0
+	for action == multistep.ActionRetry && retries < maxRetries {
+		ui.Say(fmt.Sprintf("Retrying step: %s", typeName(s.step)))
+		action = s.step.Run(ctx, state)
+		if action == multistep.ActionContinue {
+			return action
+		}
+		retries++
+	}
+
+	return multistep.ActionHalt
 }
 
 func (s abortStep) Cleanup(state multistep.StateBag) {
@@ -89,10 +151,27 @@ func (s askStep) InnerStepName() string {
 func (s askStep) Run(ctx context.Context, state multistep.StateBag) (action multistep.StepAction) {
 	for {
 		action = s.step.Run(ctx, state)
-
-		if action != multistep.ActionHalt {
+		if action == multistep.ActionContinue {
 			return
 		}
+
+		// Retry step if steps_max_retry > 1 and if action is ActionRetry
+		ui := state.Get("ui").(packer.Ui)
+		maxRetries := 0
+		if times, ok := state.GetOk("steps_max_retry"); ok {
+			maxRetries = times.(int)
+		}
+		retries := 0
+		for action == multistep.ActionRetry && retries < maxRetries {
+			ui.Say(fmt.Sprintf("Retrying step: %s", typeName(s.step)))
+			action = s.step.Run(ctx, state)
+			if action == multistep.ActionContinue {
+				return
+			}
+			retries++
+		}
+
+		action = multistep.ActionHalt
 
 		err, ok := state.GetOk("error")
 		if ok {
@@ -198,3 +277,4 @@ func handleAbortsAndInterupts(state multistep.StateBag, ui packer.Ui, stepName s
 	}
 	return true
 }
+
