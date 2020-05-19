@@ -11,4 +11,9 @@
 {
   "type": "powershell",
   "script": "../../provisioner/powershell/test-fixtures/scripts/set_version_latest.ps1"
+},
+{
+  "type": "powershell",
+  "inline": "sc.exe start Life",
+  "valid_exit_codes": ["1060"]
 }
